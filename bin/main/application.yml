@@ -1,0 +1,45 @@
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+# default
+spring:
+  profiles:
+    active: local # 기본 환경 선택
+
+  # JPA | HIBERNATE
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL94Dialect
+        format_sql: true
+        jdbc:
+          lob:
+           non_contextual_creation: true
+
+
+# local
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springboot
+    driver-class-name: org.postgresql.Driver
+    username: sangza
+    password: 24343723
+
+signingKey: testkey
+
+# production
+---
+spring:
+  profiles: production
+server:
+  port: 8081
