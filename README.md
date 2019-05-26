@@ -65,5 +65,5 @@ content-type: application/json
 - [x] Jwt init
 - [ ] test code
 - [ ] user CRUD
-- [ ] uer role table foreign key
+- [x] uer role table foreign key
 - [ ] docker init
