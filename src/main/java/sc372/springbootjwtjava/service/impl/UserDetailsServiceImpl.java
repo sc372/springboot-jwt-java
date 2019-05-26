@@ -15,10 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import sc372.springbootjwtjava.domain.Role;
 import sc372.springbootjwtjava.domain.User;
 import sc372.springbootjwtjava.repository.UserRepository;
-// import lombok.AllArgsConstructor;
 
 @Service(value = "userDetailsService")
-// @AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;

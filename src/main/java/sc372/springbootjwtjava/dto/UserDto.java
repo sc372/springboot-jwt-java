@@ -9,4 +9,5 @@ public class UserDto {
     private String id;
     private String userEmail;
     private String password;
+    private String roleName;
 }

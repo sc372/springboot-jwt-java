@@ -11,10 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import sc372.springbootjwtjava.service.SecurityService;
-// import lombok.AllArgsConstructor;
 
 @Service(value = "securityService")
-// @AllArgsConstructor
 public class SecurityServiceImpl implements SecurityService {
     @Autowired
     private AuthenticationManager authenticationManager;

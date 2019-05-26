@@ -1,3 +1,4 @@
+signingKey: testkey
 # Actuator
 management:
   endpoints:
@@ -34,8 +35,8 @@ spring:
     driver-class-name: org.postgresql.Driver
     username:
     password:
+    initialization-mode: always
 
-signingKey: testkey
 
 # production
 ---
