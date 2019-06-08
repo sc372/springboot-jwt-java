@@ -62,8 +62,10 @@ content-type: application/json
 
 ### Todo
 
-- [x] Jwt init
+- [x] jwt init
+- [x] uer role table foreign key
 - [ ] test code
 - [ ] user CRUD
-- [x] uer role table foreign key
+- [ ] redes init
 - [ ] docker init
+- [ ] jenkins init
