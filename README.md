@@ -44,7 +44,8 @@ content-type: application/json
 
 {
     "userEmail": "test@sc372.io",
-    "password": "test"
+    "password": "test",
+    "roleName": "ADMIN"
 }
 ```
 
