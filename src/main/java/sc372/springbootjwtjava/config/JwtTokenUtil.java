@@ -5,8 +5,8 @@ import java.util.Date;
 import java.util.Arrays;
 import java.util.function.Function;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.core.env.Environment;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -21,8 +21,8 @@ import static sc372.springbootjwtjava.config.Constants.ACCESS_TOKEN_VALIDITY_SEC
 @SuppressWarnings("serial")
 public class JwtTokenUtil implements Serializable {
 
-    @Autowired
-    private Environment env;
+    // @Autowired
+    // private Environment env;
 
     public String getUserEmailFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
@@ -39,8 +39,8 @@ public class JwtTokenUtil implements Serializable {
 
     private Claims getAllClaimsFormToken(String token) {
         return Jwts.parser()
-        // .setSigningKey("signingKey")
-            .setSigningKey(env.getProperty("signingKey"))
+            .setSigningKey("signingKey")
+            // .setSigningKey(env.getProperty("signingKey"))
             .parseClaimsJws(token)
             .getBody();
     }
@@ -62,8 +62,8 @@ public class JwtTokenUtil implements Serializable {
             .setClaims(claims)
             .setIssuer("https://www.datasangza.com")
             .setIssuedAt(new Date(System.currentTimeMillis() + ACCESS_TOKEN_VALIDITY_SECONDS))
-            // .signWith(SignatureAlgorithm.HS256, "signingKey")
-            .signWith(SignatureAlgorithm.HS256, env.getProperty("signingKey"))
+            .signWith(SignatureAlgorithm.HS256, "signingKey")
+            // .signWith(SignatureAlgorithm.HS256, env.getProperty("signingKey"))
             .compact();
     }
 

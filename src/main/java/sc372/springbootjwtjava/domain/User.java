@@ -21,7 +21,7 @@ import sc372.springbootjwtjava.domain.BaseTimeEntity;
 
 @Getter
 @Setter
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false, exclude = {"roles"})
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_user")
@@ -33,10 +33,10 @@ public class User extends BaseTimeEntity {
 		name = "UUID",
 		strategy = "org.hibernate.id.UUIDGenerator"
 	)
-	@Column(name = "id", updatable = false, nullable = false)
+	@Column(updatable = false, nullable = false)
     private UUID id;
 
-    @Column(length = 100, nullable = false)
+    @Column(name = "user_email", nullable = false)
     private String userEmail;
 
     @Column(nullable = false)

@@ -1,4 +1,4 @@
-signingKey: testkey
+# signingKey: testkey
 # Actuator
 management:
   endpoints:
@@ -33,8 +33,8 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/springboot
     driver-class-name: org.postgresql.Driver
-    username: sangza
-    password: 24343723
+    username: test
+    password: test
     initialization-mode: always
 
 

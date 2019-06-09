@@ -17,7 +17,7 @@ import sc372.springbootjwtjava.domain.AuthToken;
 import sc372.springbootjwtjava.domain.User;
 import sc372.springbootjwtjava.dto.SignInDto;
 import sc372.springbootjwtjava.dto.UserDto;
-import sc372.springbootjwtjava.service.SecurityService;
+// import sc372.springbootjwtjava.service.SecurityService;
 import sc372.springbootjwtjava.service.UserService;
 
 @RestController
@@ -33,14 +33,14 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private SecurityService securityService;
+    // @Autowired
+    // private SecurityService securityService;
 
     @PostMapping("/sign-up")
     public ApiResponse<User> signUp(@RequestBody UserDto userDto) {
         User user = userService.createUser(userDto);
 
-        securityService.autoLogin(user.getUserEmail(), user.getPassword());
+        // securityService.autoLogin(user.getUserEmail(), user.getPassword());
 
         return new ApiResponse<>(HttpStatus.OK.value(), "사용자 생성에 성공하였습니다.", user);
     }

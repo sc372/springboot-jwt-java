@@ -32,6 +32,7 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 
 	runtime 'org.postgresql:postgresql:9.4-1206-jdbc42'
+	// compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
 
 	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.7'
